@@ -37,9 +37,10 @@ export const Card = ( { cards }) => {
 
     console.log(person)
     if( person.name && person.number && person.address ){
-      toast(`Your order for  ${ context.singleCard.name  } is Placed`, { type: "success" })
-      var pizzaName = `${context.singleCard.name }`
+      toast(`Your order for  ${ context.singleCard[context.singleCard.length-1].name  } is Placed`, { type: "success" })
+      var pizzaName = `${context.singleCard[context.singleCard.length-1].name }`
       console.log(pizzaName)
+      setPerson({})
       console.log(document.getElementsByName(pizzaName).innerHTML)
       document.getElementById(pizzaName).innerHTML= "Purchased";
       document.getElementById(pizzaName).disabled = true;
