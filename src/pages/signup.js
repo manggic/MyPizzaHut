@@ -38,17 +38,20 @@ const SignUp = () =>{
                .auth()
                .createUserWithEmailAndPassword( email, password )
                .then( res =>{
-                   console.log(res)
+                   console.log('signIn response of firebase :',res)
                    context.setUser( { email : res.user.email,
-                uid: res.user.uid
-             })  
-                  
+				uid: res.user.uid
+				
+             })             
                  })
                .catch( error =>{
                    console.log(error)
                    toast(error.message, { type : "error"})
                }  )
-    }
+	}
+	
+	if( context?.user?.email)
+	   return <Redirect  to="/"  />
     
     const handleSubmit =(e)=>{
 	   e.preventDefault();

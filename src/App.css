@@ -113,10 +113,16 @@ img{
   width: 100px;
 }
 .navy{ 
+  text-decoration: none;
   font-size: 23px;
   font-family: Georgia, 'Times New Roman', Times, serif ;
   padding-right: 70px;
 }
+
+.navy:hover{
+   text-decoration: none;
+}
+
 a{
   color: white; 
   padding-left :20px ; 
@@ -125,4 +131,14 @@ a{
 .cartimg{
   height: 100px;
   min-width:100px;
+}
+
+.BsX{
+    font-size: 25px;  
+   padding-left: 10px;
+   float: right;
+}
+
+.minicard{
+   width: 700px;
 }

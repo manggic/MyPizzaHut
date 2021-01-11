@@ -12,7 +12,7 @@ import { MyContext } from "../context/context"
 import { Redirect } from "react-router-dom"
 import  SignIn from "./signin"
 
-// import firebase, { initializeApp } from "firebase/app";
+import firebase from "firebase/app";
 // import "firebase/auth";
 
 
@@ -26,13 +26,26 @@ export const Home =  ()  =>{
   const pizzaPrices = [ 230, 450, 300, 500, 250, 400  ]
   const pizzaImages = [One, Two ,Three, Four, Five, Six ]  
 
+
+  // const activateFirebase = () =>{
+  //  firebase.database().ref(`users/`+ context.user.uid ).set({
+  //        email: context.user.email,
+  //         uid :  context.user.uid ,
+  //         info : context.personInfo ,
+  //         orders : context.orders,
+  //         history: context.history
+  //    }) 
+  // }
+
+
    useEffect(()=>{
       const fullObj = pizzaLocation.map( (name,key)  => (
          { 'image': pizzaImages[key] ,  "location" : name,"name" : pizzaNames[key],"price" : pizzaPrices[key]   }
       ))
-
+       
         setCards(fullObj);
-   },[] )
+        //console.log(cards);
+      },[ ] )
 
    console.log("home", context );
    if( !context.user?.uid){
